@@ -41,6 +41,7 @@ header {
 }
 
 .logo {
+  mix-blend-mode: multiply;
   width: 300px;
   padding: 10px;
 }
@@ -354,7 +355,7 @@ header {
   text-align: center;
 }
 
-.contact-heading p{
+.contact-heading p {
   font-size: 2rem;
   font-weight: 500;
   color: var(--font-color);
@@ -390,7 +391,7 @@ header {
   color: #fff;
 }
 
-.contact-details p{
+.contact-details p {
   font-size: 1rem;
   font-weight: 500;
 }
@@ -472,8 +473,6 @@ header {
 .contact .contact-container .contact-form button:active {
   transform: scale(0.95);
 }
-
-
 
 .con-icon {
   font-size: 3rem;
@@ -606,7 +605,7 @@ hr {
   /* Contact Section Starts */
 
   .contact {
-    padding:20px;
+    padding: 20px;
     width: 100%;
   }
 
@@ -632,11 +631,6 @@ hr {
 /* Mobile */
 
 @media (max-width: 450px) {
-  body {
-    /* padding: 10px; */
-    overflow: hidden;
-  }
-
   .navbar {
     flex-direction: column;
     width: 50%;
@@ -698,7 +692,7 @@ hr {
     font-size: 1.5rem;
   }
 
-  .hero-content .btn{
+  .hero-content .btn {
     margin-bottom: 0;
   }
 
@@ -764,7 +758,7 @@ hr {
 
   /* Footer Section */
 
-  .copyright p{
+  .copyright p {
     padding: 30px 0;
     font-size: 1rem;
   }
