@@ -58,7 +58,7 @@
         <a href="https://linkedin.com/yourusername" target="_blank" title="LinkedIn">
           <i class="fab fa-linkedin" style="color: #000"></i>
         </a>
-        <a href="mailto:your@email.com">
+        <a href="mailto:info@naijalumia.com" target="_blank" title="Email">
           <i class="fas fa-envelope" style="color: #000"></i>
         </a>
       </div>
@@ -73,9 +73,9 @@
 
       <div class="about">
         <!-- About Image -->
-        <div class="about-img">
+        <!-- <div class="about-img">
           <img src="./asset/NaijaLumia Logo Favicon_105901.ico" alt="About Us Image" />
-        </div>
+        </div> -->
 
         <div class="about-text">
           <!-- <h2>Who We Are</h2> -->
@@ -132,7 +132,7 @@
         <div class="service-item">
           <span>05</span>
           <h2>Music Promotion</h2>
-          <p>We help artists promote their music and reach a wider audience through targeted marketing strategies.</p>
+          <p>We help artistes promote their music and reach a wider audience through targeted marketing strategies.</p>
         </div>
         <div class="service-item">
           <span>06</span>
@@ -146,7 +146,7 @@
         </div>
         <div class="service-item">
           <span>08</span>
-          <h2>Artiste Management</h2>
+          <h2>Artistes Management</h2>
           <p>We provide comprehensive management services for artists, helping them navigate the music industry and achieve their goals.</p>
         </div>
       </div>
@@ -180,7 +180,7 @@
             </div>
             <div class="details-texts">
               <h2>Email Address</h2>
-              <a href="mailto:naijalumia@gmail.com">naijalumia@gmail.com</a>
+              <a href="mailto:info@naijalumia.com">info@naijalumia.com</a>
             </div>
           </div>
 
@@ -197,13 +197,13 @@
 
         <div class="contact-form">
           <form>
-            <input type="text" placeholder="Your Name" />
+            <input type="text" placeholder="e.g David" name="sendername" id="name" required />
 
-            <input type="email" placeholder="Your Email" />
+            <input type="email" placeholder="e.g david@gmail.com" name="sendermail" id="email" required />
 
-            <textarea name="" id="" placeholder="Your Message"></textarea>
+            <textarea name="message" id="message" placeholder="Message..." required></textarea>
 
-            <button>Submit Message</button>
+            <button type="button" class="btn" onclick="sendMessage()">Send Message</button>
           </form>
         </div>
       </div>
@@ -234,12 +234,24 @@
       </div>
 
       <div class="copyright">
-        <p>&copy; 2023 - <span>NaijaLumia.</span> All Right Reserved.</p>
+        <p>&copy; 2023 - <span>NaijaLumia Media.</span> All Right Reserved.</p>
       </div>
     </div>
 
     <!-- Footer Section Ends -->
 
+    <!-- Pop up Section starts -->
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <p>Thank you! Your message has been sent.</p>
+        <button onclick="closePopup()">Close</button>
+      </div>
+    </div>
+
+    <!-- Pop up Section ends -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

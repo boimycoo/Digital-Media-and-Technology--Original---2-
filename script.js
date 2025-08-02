@@ -92,3 +92,59 @@ anchorLinks.forEach((link) => {
     }
   });
 });
+
+// Email Activation
+
+function sendMessage(){
+    (function (){
+        emailjs.init("p75x9dtjSxlA3GUgu"); // Account public key
+    })();
+
+    let serviceID = "service_hnfsjt7"; // Email service ID 
+    let templateID = "template_6f5i1be"; // Email template ID
+
+    const btn = document.querySelector("button");
+    btn.disabled = true;
+    btn.innerText = "Sending...";
+
+    const params = {
+        sendername: document.querySelector("#name").value,
+        senderemail: document.querySelector("#email").value,
+        message: document.querySelector("#message").value
+    };
+
+    emailjs.send(serviceID, templateID, params)
+    .then( res =>{
+
+        // Show the custom popup instead of alert
+
+       document.getElementById("popup").style.display = "flex";
+
+       // Auto-close after 3.5 seconds (3500ms)
+
+       setTimeout(() => {
+       closePopup();
+       }, 5000);
+
+        // Reset form
+        document.querySelector("#name").value = "";
+        document.querySelector("#email").value = "";
+        document.querySelector("#message").value = "";
+
+        //restore button
+        btn.disabled = false;
+        btn.innerText = "Send Message";
+
+    })
+    .catch( err=> {
+        console.error("EmialJS Error:", err);
+        alert("Oops! Something went wrong. Please try again later.")
+        
+    });
+
+    
+}
+
+function closePopup() {
+document.getElementById("popup").style.display = "none";
+}
