@@ -156,57 +156,97 @@
 
     <!-- Contact Section Starts -->
 
-    <div class="contact" id="contact">
-      <div class="contact-heading">
-        <h1 class="con">Contact</h1>
-        <p>Get In Touch</p>
+    <div class="contact-div" id="contact">
+      <div class="contact-details">
+        <h1>Contact Us</h1>
+        <p class="contact-subtitle">Reach out and let's get started</p>
+        <span>Head Office</span>
+        <div class="contact-loc">
+          <i class="far fa-map"></i>
+          <p>2, Isfemola Driving School, Onpetu Villa, Arowomole, Ogbomoso, Oyo State, Nigeria</p>
+        </div>
+
+        <div class="contact-loc">
+          <i class="far fa-envelope"></i>
+          <p>info@naijalumia.com</p>
+        </div>
+
+        <div class="contact-loc">
+          <i class="fa fa-phone"></i>
+          <p>+234-8067750802</p>
+        </div>
+
+        <div class="contact-loc">
+          <i class="fa fa-clock"></i>
+          <p>Monday to Saturday: 9:00am to 4:00pm</p>
+        </div>
       </div>
 
-      <div class="contact-container">
-        <div class="contact-cont">
-          <div class="contact-details">
-            <div class="con-icon">
-              <i class="fa fa-phone-square" aria-hidden="true"></i>
-            </div>
-            <div class="details-texts">
-              <h2>Phone Number</h2>
-              <a href="tel:+2348067750802">+2348067750802</a>
-            </div>
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.8455945468613!2d4.233125969810237!3d8.117199284746102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10370d541c54af9b%3A0x318de459c39be62a!2sIsfemola%20Ventures%20Driving%20School!5e0!3m2!1sen!2sng!4v1754752818631!5m2!1sen!2sng"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="form-details">
+      <div class="form-sec">
+        <h4>LEAVE A MESSAGE</h4>
+        <p>We love to hear fom you</p>
+        <form>
+          <input type="text" name="name" id="name" placeholder="Your Name" required />
+          <input type="text" name="email" id="email" placeholder="Email" required />
+          <textarea name="text" id="subject" rows="10" cols="30" placeholder="Your Message" required></textarea>
+          <button type="button" onclick="sendEmail()">Submit</button>
+        </form>
+      </div>
+
+      <!-- <div class="people">
+        <div class="people-details">
+          <div class="people-img">
+            <img src="./img/people/1.png" alt="" />
           </div>
 
-          <div class="contact-details">
-            <div class="con-icon">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-            </div>
-            <div class="details-texts">
-              <h2>Email Address</h2>
-              <a href="mailto:info@naijalumia.com">info@naijalumia.com</a>
-            </div>
-          </div>
-
-          <div class="contact-details">
-            <div class="con-icon">
-              <i class="fa fa-location-arrow" aria-hidden="true"></i>
-            </div>
-            <div class="details-texts">
-              <h2>Location</h2>
-              <p class="add">2, Onpetu Villa, Arowomole, Ogbomoso, Oyo State Nigeria.</p>
-            </div>
+          <div class="people-info">
+            <h2>John Joe</h2>
+            <p>Senior Marketing Manager</p>
+            <p>Phone: +234-8038465947</p>
+            <p>Email: contact@example.com</p>
           </div>
         </div>
 
-        <div class="contact-form">
-          <form>
-            <input type="text" placeholder="e.g David" name="sendername" id="name" required />
+        <div class="people-details">
+          <div class="people-img">
+            <img src="./img/people/2.png" alt="" />
+          </div>
 
-            <input type="email" placeholder="e.g david@gmail.com" name="sendermail" id="email" required />
-
-            <textarea name="message" id="message" placeholder="Message..." required></textarea>
-
-            <button type="button" class="btn" onclick="sendMessage()">Send Message</button>
-          </form>
+          <div class="people-info">
+            <h2>David Stone</h2>
+            <p>Senior Marketing Manager</p>
+            <p>Phone: +234-8038465947</p>
+            <p>Email: contact@example.com</p>
+          </div>
         </div>
-      </div>
+
+        <div class="people-details">
+          <div class="people-img">
+            <img src="./img/people/3.png" alt="" />
+          </div>
+
+          <div class="people-info">
+            <h2>Karen Abel</h2>
+            <p>Senior Marketing Manager</p>
+            <p>Phone: +234-8038465947</p>
+            <p>Email: contact@example.com</p>
+          </div>
+        </div>
+      </div> -->
     </div>
 
     <!-- Contact Section Ends -->
