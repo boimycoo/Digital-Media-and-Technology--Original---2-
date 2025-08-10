@@ -93,58 +93,75 @@ anchorLinks.forEach((link) => {
   });
 });
 
-// Email Activation
 
-function sendMessage(){
-    (function (){
-        emailjs.init("p75x9dtjSxlA3GUgu"); // Account public key
-    })();
+function sendMessage(e) {
+  e.preventDefault();
 
-    let serviceID = "service_hnfsjt7"; // Email service ID 
-    let templateID = "template_6f5i1be"; // Email template ID
+  // Email Activation
 
-    const btn = document.querySelector("button");
-    btn.disabled = true;
-    btn.innerText = "Sending...";
+  const emailInput = document.getElementById("email");
+  const emailError = document.getElementById("email-error");
+  const emailValue = emailInput.value.trim();
 
-    const params = {
-        sendername: document.querySelector("#name").value,
-        senderemail: document.querySelector("#email").value,
-        message: document.querySelector("#message").value
-    };
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    emailjs.send(serviceID, templateID, params)
-    .then( res =>{
+  if (!emailPattern.test(emailValue)) {
+    emailInput.style.border = "2px solid red";
+    emailError.style.display = "block";
+    emailError.textContent = "Please enter a valid email address.";
+    return; // Stop here if invalid
+  } else {
+    emailInput.style.border = "2px solid green";
+    emailError.style.display = "none";
+  }
 
-        // Show the custom popup instead of alert
+  // EmailJS Initialization
 
-       document.getElementById("popup").style.display = "flex";
+  (function () {
+    emailjs.init("p75x9dtjSxlA3GUgu"); // Account public key
+  })();
 
-       // Auto-close after 3.5 seconds (3500ms)
+  let serviceID = "service_hnfsjt7"; // Email service ID
+  let templateID = "template_6f5i1be"; // Email template ID
 
-       setTimeout(() => {
-       closePopup();
-       }, 5000);
+  const btn = document.querySelector("button");
+  btn.disabled = true;
+  btn.innerText = "Sending...";
 
-        // Reset form
-        document.querySelector("#name").value = "";
-        document.querySelector("#email").value = "";
-        document.querySelector("#message").value = "";
+  const params = {
+    sendername: document.querySelector("#name").value,
+    senderemail: document.querySelector("#email").value,
+    message: document.querySelector("#message").value,
+  };
 
-        //restore button
-        btn.disabled = false;
-        btn.innerText = "Send Message";
+  emailjs
+    .send(serviceID, templateID, params)
+    .then((res) => {
+      // Show the custom popup instead of alert
 
+      document.getElementById("popup").style.display = "flex";
+
+      // Auto-close after 3.5 seconds (3500ms)
+
+      setTimeout(() => {
+        closePopup();
+      }, 5000);
+
+      // Reset form
+      document.querySelector("#name").value = "";
+      document.querySelector("#email").value = "";
+      document.querySelector("#message").value = "";
+
+      //restore button
+      btn.disabled = false;
+      btn.innerText = "Send Message";
     })
-    .catch( err=> {
-        console.error("EmialJS Error:", err);
-        alert("Oops! Something went wrong. Please try again later.")
-        
+    .catch((err) => {
+      console.error("EmialJS Error:", err);
+      alert("Oops! Something went wrong. Please try again later.");
     });
-
-    
 }
 
 function closePopup() {
-document.getElementById("popup").style.display = "none";
+  document.getElementById("popup").style.display = "none";
 }
